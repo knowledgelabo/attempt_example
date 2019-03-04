@@ -1,7 +1,9 @@
 # set up rails!
 
 `git clone`
+
 `bundle install -j4`
+
 `bundle exec rails db:create`
 
 # README
