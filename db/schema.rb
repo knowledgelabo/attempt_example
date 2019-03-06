@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_084853) do
 
   create_table "sales", force: :cascade do |t|
     t.bigint "fiscal_year_id", null: false
-    t.bigint "member_id", null: false
+    t.bigint "member_id"
     t.integer "amount", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
