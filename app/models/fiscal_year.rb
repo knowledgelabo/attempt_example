@@ -1,3 +1,3 @@
 class FiscalYear < ApplicationRecord
-  has_many :sales
+  has_many :sales, dependent: :destroy
 end

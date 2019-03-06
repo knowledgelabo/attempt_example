@@ -1,0 +1,19 @@
+
+%table
+  %thead
+    %tr
+      %th 部門
+      %th メンバー
+      - @fiscal_years.each do | fiscal_year |
+        %th= fiscal_year.name
+  %tbody
+    - @members.each do | member |
+      %tr
+        %td= member.division.name
+        %td= member.full_name
+        - @fiscal_years.each do | fiscal_year |
+          %td= member.sales.find_by(fiscal_year: fiscal_year)&.amount.to_i
+
+= form_with url: import_sales_path, local: true do | f |
+  = f.file_field :csv
+  = f.submit
